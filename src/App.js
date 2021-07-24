@@ -4,6 +4,11 @@ import MovieForm from './components/MovieForm';
 import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import {
+  BroswerRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 function App() {
   const [movies, setMovies] = useState([]);
 
@@ -30,12 +35,22 @@ function App() {
     ])
   };
   return (
-    <div className="App">
-      <Navbar />
-      <h1>Movie List</h1>
-      <MovieForm addMovie = {addMovie} />
-      {renderMovies}
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Route path = "/movies">
+          <h1>Movie List</h1>
+          <MovieForm addMovie = {addMovie} />
+          {renderMovies}
+        </Route>
+        <Route path = "/" exact>
+          <h1>Home</h1>
+        </Route>
+        <Route path = "/users">
+          <h1>Users</h1>
+        </Route>
+      </div>
+    </Router>
   );
 }
  
