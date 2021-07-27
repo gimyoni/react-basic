@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Movie from './components/Movie';
 import MovieForm from './components/MovieForm';
 import Navbar from './components/Navbar';
+import Users from './pages/Users';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
@@ -47,7 +48,7 @@ function App() {
           <h1>Home</h1>
         </Route>
         <Route path = "/users">
-          <h1>Users</h1>
+          <Users />
         </Route>
       </div>
     </Router>
