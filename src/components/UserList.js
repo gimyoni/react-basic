@@ -1,15 +1,22 @@
 import React from 'react';
 
-const UserList = ({users}) => {
+const UserList = ({ users }) => {
     console.log(users)
-    return(
+    return (
         <div>
-            {users.map(user =>{
-                return(<div key = {user.id}>
-                    {user.name}
-                </div>)
+            {users.map(user => {
+                return (
+                    <div 
+                        className="card mb-2"
+                        key = {user.id}>
+
+                        <div class="card-body p-3">
+                            {user.name}
+                        </div>
+                    </div>
+                );
             })}
-        </div>
+        </div >
     );
 };
 
