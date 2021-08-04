@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserList = ({ users }) => {
     return (
@@ -10,7 +11,7 @@ const UserList = ({ users }) => {
                         key = {user.id}>
 
                         <div class="card-body p-3">
-                            {user.name}
+                            <Link to={`/users/${user.id}`}>{user.name}</Link>
                         </div>
                     </div>
                 );

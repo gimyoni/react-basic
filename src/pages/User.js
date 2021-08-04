@@ -18,11 +18,18 @@ const User = () =>{
             });
     }, []);
 
+    const userDetail = loading ? <Spinner /> :(
+        <div>
+            <div>{user.name}</div>
+            <div>{user.email}</div>
+            <div>{user.phone}</div>
+        </div>
+    )
+
     return(
         <>
             <h1>User 정보</h1>
-            {loading ? <Spinner /> :
-            null}        
+            {userDetail}       
         </>
     );
 };
